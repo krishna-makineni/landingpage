@@ -46,7 +46,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07111F] text-[#F7F9FC] font-sans antialiased selection:bg-[#C5F56A] selection:text-[#07111F] relative bg-tech-grid">
+    <div className="min-h-screen bg-[#070B14] text-[#F5F7FB] font-sans antialiased selection:bg-[#C5F56A] selection:text-[#070B14] relative bg-tech-grid">
+      {/* Subtle top radial fade overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#070B14]/70 to-[#070B14] pointer-events-none" />
       
       {/* Sticky Navigation Bar */}
       <Navbar

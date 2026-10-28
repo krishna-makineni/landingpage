@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(0); // First item open by default
@@ -36,47 +36,46 @@ export function FAQ() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold tracking-wider text-[#50DFFF] bg-[#50DFFF]/10 border border-[#50DFFF]/20">
-            <HelpCircle className="w-3.5 h-3.5" />
+        <div className="text-center space-y-3 mb-14 sm:mb-16">
+          <span className="text-[11px] font-mono font-medium tracking-widest text-[#4ADFFF] uppercase">
             COMMON QUESTIONS
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#F7F9FC]">
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB]">
             FREQUENTLY ASKED QUESTIONS
           </h2>
-          <p className="text-base text-[#A8B6C8]">
+          <p className="font-sans text-sm sm:text-base text-[#A5B2C5]">
             Clear, verified answers to help you prepare for the workshop.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={faq.q}
-                className="bg-[#10172A] border border-[#203254] rounded-xl overflow-hidden transition-colors hover:border-[#50DFFF]/40"
+                className="bg-[#0D1523] border border-white/[0.08] hover:border-white/[0.16] rounded-xl overflow-hidden transition-all duration-200"
               >
                 <button
                   type="button"
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none focus:ring-2 focus:ring-[#50DFFF] transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-[#4ADFFF] transition-colors"
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <span className="font-bold text-base sm:text-lg text-white pr-4">
+                  <span className="font-display font-semibold text-sm sm:text-base text-[#F5F7FB] pr-4">
                     {faq.q}
                   </span>
-                  <div className={`w-8 h-8 rounded-lg bg-[#17243D] border border-[#203254] flex items-center justify-center shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 bg-[#C5F56A]/15 border-[#C5F56A]/40' : ''}`}>
-                    <ChevronDown className={`w-4 h-4 ${isOpen ? 'text-[#C5F56A]' : 'text-[#A8B6C8]'}`} />
+                  <div className={`w-7 h-7 rounded-md bg-[#111C2E] border border-white/[0.08] flex items-center justify-center shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 bg-[#C5F56A]/10 border-[#C5F56A]/30' : ''}`}>
+                    <ChevronDown className={`w-3.5 h-3.5 ${isOpen ? 'text-[#C5F56A]' : 'text-[#A5B2C5]'}`} strokeWidth={1.75} />
                   </div>
                 </button>
 
                 {isOpen && (
                   <div
                     id={`faq-answer-${index}`}
-                    className="px-5 pb-6 sm:px-6 pt-1 text-sm sm:text-base text-[#A8B6C8] leading-relaxed border-t border-[#203254]/40 animate-fadeIn"
+                    className="px-4 pb-5 sm:px-5 pt-1 text-xs sm:text-sm text-[#A5B2C5] leading-relaxed border-t border-white/[0.04] font-sans"
                   >
                     {faq.a}
                   </div>
@@ -87,8 +86,8 @@ export function FAQ() {
         </div>
 
         {/* Note on Organizer Confirmation */}
-        <div className="mt-10 text-center">
-          <p className="text-xs text-[#64748B]">
+        <div className="mt-8 text-center">
+          <p className="text-xs text-[#627288] font-sans">
             Have an additional question? Event communications will be issued directly via your registered email.
           </p>
         </div>
