@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #07111F;
+  --color-navy: #10172A;
+  --color-navy-card: #111C30;
+  --color-navy-surface: #17243D;
+  --color-navy-border: #203254;
+  --color-navy-border-hover: #2E4574;
+  --color-lime: #C5F56A;
+  --color-lime-glow: rgba(197, 245, 106, 0.25);
+  --color-lime-hover: #b6ea54;
+  --color-cyan: #50DFFF;
+  --color-cyan-glow: rgba(80, 223, 255, 0.2);
+  --color-snow: #F7F9FC;
+  --color-muted: #A8B6C8;
+  --color-muted-dark: #64748B;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07111F;
+}
+::-webkit-scrollbar-thumb {
+  background: #203254;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #50DFFF;
+}
+
+/* Subtle grid pattern background */
+.bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(32, 50, 84, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 50, 84, 0.2) 1px, transparent 1px);
+}
+
+/* Subtle dot pattern */
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(80, 223, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Pulse animation for live indicators */
+@keyframes softPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
