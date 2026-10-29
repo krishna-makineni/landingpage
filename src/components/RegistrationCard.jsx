@@ -309,20 +309,11 @@ export function RegistrationCard({ onRegistrationSuccess }) {
               name="agreeConsent"
               checked={formData.agreeConsent}
               onChange={handleChange}
-              className="sr-only"
+              className="sr-only peer"
             />
             <div
-              onClick={() => {
-                setFormData(prev => ({ ...prev, agreeConsent: !prev.agreeConsent }));
-                if (errors.agreeConsent) {
-                  setErrors(prev => {
-                    const next = { ...prev };
-                    delete next.agreeConsent;
-                    return next;
-                  });
-                }
-              }}
-              className={`mt-0.5 w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${
+              aria-hidden="true"
+              className={`mt-0.5 w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-[#C5F56A] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-[#0D1523] ${
                 formData.agreeConsent
                   ? 'bg-[#C5F56A] border-[#C5F56A] text-[#070B14]'
                   : errors.agreeConsent
